@@ -17,7 +17,7 @@ class TestDeathNote {
     private static final String NAME_2 = "Vadym Teliatnyk";
     private static final String CAUSE_1 = "heart attack";
     private static final String CAUSE_2 = "karting accident";
-    private static final String DETAIL_1 = "unknown";
+    private static final String DETAIL_1 = " ";
     private static final String DETAIL_2 = "ran for too long";
     private static final long MS_1 = 100L;
     private static final long MS_2 = 6100L;
@@ -77,8 +77,8 @@ class TestDeathNote {
         assertEquals(DETAIL_2, deathNote.getDeathDetails(NAME_1));
         deathNote.writeName(NAME_2);
         Thread.sleep(MS_2);
-        assertFalse(deathNote.writeDetails(DETAIL_1));
-        assertEquals(DETAIL_2, deathNote.getDeathDetails(NAME_1));
+        assertFalse(deathNote.writeDetails(DETAIL_2));
+        assertEquals(DETAIL_1, deathNote.getDeathDetails(NAME_2));
     }
 
 }
